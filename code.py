@@ -44,6 +44,22 @@ def procura(sql):
         return '-2';
     
     
+# Altera Produto
+
+def alteraProduto(altera, id, campo):
+    db_connection = mysql.connector.connect(host='localhost', user='root', password='Oicueio1!@#$', database='supermercado');
+    cursor = db_connection.cursor();
+    sql = "UPDATE Produtos SET {} = %s WHERE IdProduto = %s".format(campo)
+    values = ( altera, id)
+    try:
+        cursor.execute(sql, values);
+        cursor.close()
+        db_connection.commit()
+        db_connection.close()
+        return "1";
+    except:
+        return "-1";
+
 
 # Execução
 
@@ -63,7 +79,7 @@ while 0 == 0:
         "99 - Sair\n"
     );
 
-    if op == "1":
+    if op == "1": # colocar um while aqui
         nome = input("Digite o nome do produto: \n");
             
         peso = float(input("Digite o peso do produto: \n"));
@@ -71,7 +87,7 @@ while 0 == 0:
         
         retorno = cadastrarProduto(nome, peso, valor);
         if(retorno == "-1"):
-            print("Erro na inserção");
+            print("Erro na inserção"); # colocar um continue aqui
         else:
             print("Produto cadastrado com sucesso!");
         
@@ -105,10 +121,48 @@ while 0 == 0:
 
                 print(tabulate(lista, headers=["Id", "Nome", "Peso", "Valor"]));
 
-                op3 = input("\n Deseja pesquisar mais algum? (S \ N) ")
+                op3 = input("\n Deseja pesquisar mais algum? (S \ N) ").upper();
                 if op3 == "N":
                     break;
-                
+
+    if op == "3":
+        while(1 == 1):
+            idProd = input("Digite o Id do produto a ser alterado");
+            sql = "SELECT IdProduto, Nome, Peso, Valor  FROM Produtos WHERE IdProduto ={}".format(idProd); 
+            ret = procura(sql);
+            if ret == "-1":
+                print("Produto não encontrado!");
+                continue
+            else:
+                print(tabulate(ret, headers=["Id", "Nome", "Peso", "Valor"]));
+                op4 = input("O produto que você deseja alterar é o produto acima? (S / N)").upper()
+                if op4 == 'S':
+                    op5 = input("O que você deseja alterar?\n"
+                          "1 - Nome\n"
+                          "2 - Valor\n"
+                          "3 - Peso\n"
+                          "4 - Voltar para menu\n")
+                    if op5 == "1":
+                        newName = input("Digite o novo nome: ")
+                        ret = alteraProduto(newName, idProd, "Nome");
+                    elif op5 == "2":
+                        newVal = float(input("Digite o novo valor: "))
+                        ret = alteraProduto(newVal, idProd, "Valor")
+                    elif op5 == "3":
+                        newPes = float(input("Digite o novo peso: "))
+                        ret = alteraProduto(newPes, idProd, "Peso")
+                    if ret == "-1":
+                        print("Erro em alterar, tente novamente")
+                        continue
+                    if ret == "1":
+                        op6 = input("Alteração feita, gostaria de fazer mais alguma alteração? (S / N)").upper();
+                        if op6 == 'N':
+                            break;
+                    else:
+                        continue
+                else:
+                    continue
+
     if op == "99":
         print("Volte sempre!")
         break; 
