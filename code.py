@@ -3,6 +3,11 @@ from random import *
 from mysql.connector import errorcode
 from tabulate import tabulate
 
+# TODO 
+# Códigos de erro
+
+
+
 #Função de testes
 
 def testes():
@@ -119,13 +124,30 @@ def listar(tabela):
         lista = []
         for row in cursor:
             lista.append(row);
+        cursor.close()
+        db_connection.close()
         if len(lista) == 0:
             return '-1'
         else:
             return lista;
+        
     except:
         return '-2';
-    
+
+# Remover produto
+
+def removerProduto(id):
+    db_connection = mysql.connector.connect(host='localhost', user='root', password='Oicueio1!@#$', database='supermercado');
+    cursor = db_connection.cursor();
+    sql = "DELETE FROM Produtos WHERE IdProduto = {}".format(id)
+    try:
+        cursor.execute(sql)
+        cursor.close()
+        db_connection.commit()
+        db_connection.close()
+        return "1"
+    except:
+        return "-1"
 
 # testes();
 
@@ -195,7 +217,7 @@ while 0 == 0:
 
     if op == "3":
         while(1 == 1):
-            idProd = input("Digite o Id do produto a ser alterado");
+            idProd = input("Digite o Id do produto a ser alterado: ");
             sql = "SELECT IdProduto, Nome, Peso, Valor  FROM Produtos WHERE IdProduto ={}".format(idProd); 
             ret = procura(sql);
             if ret == "-1":
@@ -203,7 +225,7 @@ while 0 == 0:
                 continue
             else:
                 print(tabulate(ret, headers=["Id", "Nome", "Peso", "Valor"]));
-                op4 = input("O produto que você deseja alterar é o produto acima? (S / N)").upper()
+                op4 = input("O produto que você deseja alterar é o produto acima? (S / N): ").upper()
                 if op4 == 'S':
                     op5 = input("O que você deseja alterar?\n"
                           "1 - Nome\n"
@@ -223,13 +245,41 @@ while 0 == 0:
                         print("Erro em alterar, tente novamente")
                         continue
                     if ret == "1":
-                        op6 = input("Alteração feita, gostaria de fazer mais alguma alteração? (S / N)").upper();
+                        op6 = input("Alteração feita, gostaria de fazer mais alguma alteração? (S / N): ").upper();
                         if op6 == 'N':
                             break;
                     else:
                         continue
                 else:
                     continue
+    
+    if op == "4": #Falta testar TODO
+        while 1 == 1:
+            idProd = input("Digite o Id do produto a ser removido: ");
+            sql = "SELECT IdProduto, Nome, Peso, Valor  FROM Produtos WHERE IdProduto ={}".format(idProd)
+            lista = procura(sql);
+            if lista == "-1":
+                print("Produto não encontrado")
+                continue
+            else:
+                print(tabulate(lista, headers=["Id", "Nome", "Peso", "Valor"]));
+                op7 = input("Este é o produto desejado? (S / N) ").upper()
+                if op7 == 'N':
+                    continue
+                else:
+                    ret = removerProduto(idProd);
+                    if ret == "-1":
+                        print("Erro ao remover produto")
+                        continue
+                    else:
+                        print("Produto removido com sucesso");
+                        op8 = input("Deseja remover mais algum produto? (S / N): ").upper()
+                        if op8 == "N":
+                            break;
+                        else:
+                            continue;
+                        
+
     if op == "5":
         lista = listar("Produtos");
         print(tabulate(lista, headers=["Id", "Nome", "Peso", "Valor"]));
