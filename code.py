@@ -1,6 +1,55 @@
 import mysql.connector
+from random import *
 from mysql.connector import errorcode
 from tabulate import tabulate
+
+#Função de testes
+
+def testes():
+    count = 0
+    # Teste 1
+    nome = "Teste"+str(randint(0,100));
+    peso = uniform(1.0, 50.0);
+    valor = uniform(5.0, 100.0)
+    try:
+        cadastrarProduto(nome, peso, valor);
+        count += 1;
+    except:
+        print("Teste 1 fracassou");
+    
+    # Teste 2
+    try:
+        sql = "SELECT IdProduto, Nome, Peso, Valor FROM Produtos WHERE Nome ="+nome
+        ret = procura(sql);
+        if ret == "-1" or ret == "-2":
+            print("Teste 2 fracassou " + ret);
+        else:
+            count += 1
+    except:
+        print("Teste 2 fracassou");
+
+    input("Continuar Testes?");
+    
+    # Teste 3
+    nome = "Novo_Teste"+str(randint(0,100));
+    peso = 0.0
+    valor = 0.0
+    try:
+        ret = alteraProduto(nome, 1 ,"Nome");
+        if ret == "-1":
+            print("Teste 3 fracassou");
+        ret = alteraProduto(peso, 1 ,"Peso");
+        if ret == "-1":
+            print("Teste 3 fracassou");
+        ret = alteraProduto(valor, 1 ,"Valor");
+        if ret == "-1":
+            print("Teste 3 fracassou");
+        else:
+            count += 1
+    except:
+        print("Teste 3 fracassou");
+    
+    print("Testes concluídos com sucesso: {}/3".format(count))
 
 # Funções
 
@@ -60,6 +109,25 @@ def alteraProduto(altera, id, campo):
     except:
         return "-1";
 
+# Listar 
+def listar(tabela):
+    db_connection = mysql.connector.connect(host='localhost', user='root', password='Oicueio1!@#$', database='supermercado');
+    cursor = db_connection.cursor();
+    sql = "SELECT * FROM {}".format(tabela)
+    try:
+        cursor.execute(sql);
+        lista = []
+        for row in cursor:
+            lista.append(row);
+        if len(lista) == 0:
+            return '-1'
+        else:
+            return lista;
+    except:
+        return '-2';
+    
+
+# testes();
 
 # Execução
 
@@ -162,6 +230,10 @@ while 0 == 0:
                         continue
                 else:
                     continue
+    if op == "5":
+        lista = listar("Produtos");
+        print(tabulate(lista, headers=["Id", "Nome", "Peso", "Valor"]));
+
 
     if op == "99":
         print("Volte sempre!")
