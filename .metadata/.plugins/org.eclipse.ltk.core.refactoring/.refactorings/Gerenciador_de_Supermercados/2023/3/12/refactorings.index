@@ -14,3 +14,6 @@
 1679235549678	Encapsulate field 'sucessoNaBusca'
 1679237011127	Rename method 'procuraProduto'
 1679237735708	Encapsulate field 'itemNaoEncontradoBusca'
+1679238633060	Encapsulate field 'erroNaDelecao'
+1679238639325	Encapsulate field 'sucessoNaDelecao'
+1679239447154	Rename method 'removeItem'

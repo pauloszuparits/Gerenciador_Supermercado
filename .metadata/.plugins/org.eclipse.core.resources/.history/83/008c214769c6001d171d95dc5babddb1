@@ -42,18 +42,16 @@ public class Funcoes {
 		return(retornos);
 	}
 	
-	public Retorno removeItemTabela(Statement declaracaoConexao, CamposAlteracao campos) {
+	public Retorno removeItem(Statement declaracaoConexao, CamposAlteracao campos) {
 		String sql = "DELETE FROM "+campos.getTabela()
-					+" WHERE "+campos.getCampo()+" = '"+campos.getId()+"'";
-				
+					+" WHERE Id"+campos.getTabela()+" = '"+campos.getId()+"'";
+		
 		try {
 			declaracaoConexao.executeUpdate(sql);
 		} catch (SQLException e) {
 			return tiposDeRetornos.getErroNaDelecao();
 		}
-		
 		return tiposDeRetornos.getSucessoNaDelecao();
-		
 	}
 	
 	

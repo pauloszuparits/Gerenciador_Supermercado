@@ -8,8 +8,6 @@ public class Retornos {
 	private Retorno erroNaBusca = new Retorno("Erro na procura do item");
 	private Retorno itemNaoEncontradoBusca = new Retorno("Erro na busca pelo item, item nao encontrado");
 	private Retorno sucessoNaBusca = new Retorno("Sucesso na busca, Item encontrado");
-	private Retorno erroNaDelecao = new Retorno("Erro na delecao do item");
-	private Retorno sucessoNaDelecao = new Retorno("Sucesso na delecao do item");
 	
 	public Retorno retornaRetornoMaisProduto(Retorno retornoRecebido, Produto produto) {
 		Retorno retornoEnviar = new Retorno(produto, retornoRecebido.getDescricaoRetorno());
@@ -43,14 +41,6 @@ public class Retornos {
 
 	public Retorno getItemNaoEncontradoBusca() {
 		return itemNaoEncontradoBusca;
-	}
-
-	public Retorno getErroNaDelecao() {
-		return erroNaDelecao;
-	}
-
-	public Retorno getSucessoNaDelecao() {
-		return sucessoNaDelecao;
 	}
 
 	

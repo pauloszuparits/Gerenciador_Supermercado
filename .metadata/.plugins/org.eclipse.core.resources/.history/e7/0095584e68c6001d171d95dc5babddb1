@@ -12,7 +12,6 @@ public class Funcoes {
 		return lista.size() == 0;
 	}
 	
-	
 	public ArrayList<Retorno> buscaProduto(Statement declaracaoConexao, String nome) {
 		ArrayList<Retorno> retornos = new ArrayList<Retorno>();
 		String sql = "SELECT IdProduto, Nome, Peso, Valor From Produtos"
@@ -41,21 +40,6 @@ public class Funcoes {
 		
 		return(retornos);
 	}
-	
-	public Retorno removeItemTabela(Statement declaracaoConexao, CamposAlteracao campos) {
-		String sql = "DELETE FROM "+campos.getTabela()
-					+" WHERE "+campos.getCampo()+" = '"+campos.getId()+"'";
-				
-		try {
-			declaracaoConexao.executeUpdate(sql);
-		} catch (SQLException e) {
-			return tiposDeRetornos.getErroNaDelecao();
-		}
-		
-		return tiposDeRetornos.getSucessoNaDelecao();
-		
-	}
-	
 	
 	public Retorno alteraItemTabela(Statement declaracaoConexao, CamposAlteracao campos) {
 		String sql = "UPDATE "+campos.getTabela()

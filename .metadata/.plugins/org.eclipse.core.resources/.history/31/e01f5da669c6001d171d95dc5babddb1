@@ -13,9 +13,8 @@ public class CamposAlteracao {
 		this.valorParaAlterarCampo = valorParaAlterarCampo;
 	}
 	
-	public CamposAlteracao(String tabela,String campo ,int id) {
+	public CamposAlteracao(String tabela, int id) {
 		this.tabela = tabela;
-		this.campo = campo;
 		this.id = id;
 	}
 	
