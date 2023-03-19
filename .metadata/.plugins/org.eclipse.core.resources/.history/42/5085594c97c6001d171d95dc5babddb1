@@ -17,8 +17,8 @@ public class main {
 				double peso = resultadoQuery.getDouble("Peso");
 				double valor = resultadoQuery.getDouble("Valor");
 				
-				//String formatada = String.format("IdProduto: %i\nNome do Produto: %s\nPeso: %d\nValor:%d\n", idProduto,nomeProduto,peso,valor);
-				System.out.println(idProduto + "\n" + nomeProduto + "\n" + peso + "\n" + valor + "\n");
+				String formatada = String.format("IdProduto: %i\nNome do Produto: %s\nPeso: %d\nValor:%d\n", idProduto,nomeProduto,peso,valor);
+				System.out.println(formatada);
 				
 			}
 		}catch(Exception e) {

@@ -1,7 +1,5 @@
 package main;
 
-import java.sql.ResultSet;
-
 public class Retornos {
 	private Retorno erroDeInsercao = new Retorno("Erro de inserção na tabela");
 	private Retorno sucessoNaInsercao = new Retorno("Sucesso na insercao na tabela");
@@ -12,8 +10,6 @@ public class Retornos {
 	private Retorno sucessoNaBusca = new Retorno("Sucesso na busca, Item encontrado");
 	private Retorno erroNaDelecao = new Retorno("Erro na delecao do item");
 	private Retorno sucessoNaDelecao = new Retorno("Sucesso na delecao do item");
-	private Retorno erroNaListagem = new Retorno("Erro na listagem dos itens");
-	private Retorno sucessoNaListagem = new Retorno("Sucesso na listagem dos itens");
 	
 	public Retorno retornaRetornoMaisProduto(Retorno retornoRecebido, Produto produto) {
 		Retorno retornoEnviar = new Retorno(produto, retornoRecebido.getDescricaoRetorno());
@@ -22,11 +18,6 @@ public class Retornos {
 	
 	public Retorno retornaRetornoMaisCliente(Retorno retornoRecebido, Cliente cliente) {
 		Retorno retornoEnviar = new Retorno(cliente, retornoRecebido.getDescricaoRetorno());
-		return retornoEnviar;
-	}
-	
-	public Retorno retornaRetornoMaisResultSet(Retorno retornoRecebido, ResultSet resultadoQuery) {
-		Retorno retornoEnviar = new Retorno(resultadoQuery, retornoRecebido.getDescricaoRetorno());
 		return retornoEnviar;
 	}
 	
@@ -65,15 +56,6 @@ public class Retornos {
 
 	public Retorno getSucessoNaDelecao() {
 		return sucessoNaDelecao;
-	}
-
-	public Retorno getErroNaListagem() {
-		return erroNaListagem;
-	}
-
-
-	public Retorno getSucessoNaListagem() {
-		return sucessoNaListagem;
 	}
 
 	

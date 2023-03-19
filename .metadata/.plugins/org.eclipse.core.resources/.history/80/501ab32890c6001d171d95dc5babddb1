@@ -8,27 +8,7 @@ public class main {
 		Conexao conexaoComMysql = new Conexao();
 		Statement declaracaoConexao = conexaoComMysql.getConection().createStatement();
 		
-		Retorno retorno = funcao.listaItensTabela(declaracaoConexao, "Produtos");
-		ResultSet resultadoQuery = retorno.getResultadoQuery();
-		try {
-			while(resultadoQuery.next()) {
-				int idProduto = resultadoQuery.getInt("IdProduto");
-				String nomeProduto = resultadoQuery.getString("Nome");
-				double peso = resultadoQuery.getDouble("Peso");
-				double valor = resultadoQuery.getDouble("Valor");
-				
-				//String formatada = String.format("IdProduto: %i\nNome do Produto: %s\nPeso: %d\nValor:%d\n", idProduto,nomeProduto,peso,valor);
-				System.out.println(idProduto + "\n" + nomeProduto + "\n" + peso + "\n" + valor + "\n");
-				
-			}
-		}catch(Exception e) {
-			System.out.println(retorno.getDescricaoRetorno());
-		}
-		/*
-		Compra compra = new Compra(2, 1200.00, new Date(01012022));
-		Retorno retorno = compra.InsereCompra(declaracaoConexao);
-		System.out.println(retorno.getDescricaoRetorno());
-		*/
+		
 		
 		/*
 		ArrayList<Retorno> retornos = funcao.buscaCliente(declaracaoConexao,"123123123");

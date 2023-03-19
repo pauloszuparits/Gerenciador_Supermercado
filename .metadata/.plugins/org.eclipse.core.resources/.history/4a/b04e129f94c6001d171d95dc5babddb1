@@ -80,16 +80,16 @@ public class Funcoes {
 	
 	
 	
-	public Retorno listaItensTabela(Statement declaracaoConexao, String tabela) {
+	public ArrayList listaItensTabela(Statement declaracaoConexao, String tabela) {
 		String sql = "SELECT * FROM "+tabela;
 		
 		try {
 			ResultSet resultadoDaBusca = declaracaoConexao.executeQuery(sql);
-			return tiposDeRetornos.retornaRetornoMaisResultSet(tiposDeRetornos.getSucessoNaListagem(), resultadoDaBusca);
+			
 		} catch (SQLException e) {
-			return tiposDeRetornos.retornaRetornoMaisResultSet(tiposDeRetornos.getErroNaListagem(), null);
+			
 		}
-				
+		
 	}
 	
 	

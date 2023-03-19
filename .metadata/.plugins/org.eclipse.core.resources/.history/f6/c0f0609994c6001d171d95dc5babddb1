@@ -71,6 +71,9 @@ public class Retornos {
 		return erroNaListagem;
 	}
 
+	public void setErroNaListagem(Retorno erroNaListagem) {
+		this.erroNaListagem = erroNaListagem;
+	}
 
 	public Retorno getSucessoNaListagem() {
 		return sucessoNaListagem;

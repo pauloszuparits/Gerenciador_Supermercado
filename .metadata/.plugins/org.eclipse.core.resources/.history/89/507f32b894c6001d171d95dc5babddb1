@@ -85,11 +85,11 @@ public class Funcoes {
 		
 		try {
 			ResultSet resultadoDaBusca = declaracaoConexao.executeQuery(sql);
-			return tiposDeRetornos.retornaRetornoMaisResultSet(tiposDeRetornos.getSucessoNaListagem(), resultadoDaBusca);
 		} catch (SQLException e) {
 			return tiposDeRetornos.retornaRetornoMaisResultSet(tiposDeRetornos.getErroNaListagem(), null);
 		}
-				
+		
+		return tiposDeRetornos.retornaRetornoMaisResultSet(null, null)
 	}
 	
 	

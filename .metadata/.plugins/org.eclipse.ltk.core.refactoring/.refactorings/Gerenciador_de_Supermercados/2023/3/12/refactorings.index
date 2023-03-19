@@ -23,3 +23,6 @@
 1679242813918	Encapsulate field 'endereco'
 1679244000896	Encapsulate field 'idCliente'
 1679244088315	Encapsulate field 'cliente'
+1679257442320	Encapsulate field 'resultadoQuery'
+1679257612105	Encapsulate field 'erroNaListagem'
+1679257698208	Encapsulate field 'sucessoNaListagem'

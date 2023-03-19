@@ -1,0 +1,8 @@
+package main;
+
+public class Compra {
+	private int idCliente;
+	private double somaCompraCliente;
+	
+	
+}

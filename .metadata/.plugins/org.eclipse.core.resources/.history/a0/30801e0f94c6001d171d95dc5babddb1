@@ -1,12 +1,9 @@
 package main;
 
-import java.sql.ResultSet;
-
 public class Retorno {
 	private String descricaoRetorno;
 	private Produto produto;
 	private Cliente cliente;
-	private ResultSet resultadoQuery;
 	
 	public Retorno(String descricaoRetorno) {
 		this.descricaoRetorno = descricaoRetorno;		
@@ -21,12 +18,7 @@ public class Retorno {
 		this.cliente = cliente;
 		this.descricaoRetorno = descricaoRetorno;		
 	}
-		
-	public Retorno(ResultSet resultadoQuery, String descricaoRetorno) {
-		this.descricaoRetorno = descricaoRetorno;
-		this.resultadoQuery = resultadoQuery;
-	}
-
+	
 	public String getDescricaoRetorno() {
 		return descricaoRetorno;
 	}
@@ -47,14 +39,6 @@ public class Retorno {
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
-	}
-
-	public ResultSet getResultadoQuery() {
-		return resultadoQuery;
-	}
-
-	public void setResultadoQuery(ResultSet resultadoQuery) {
-		this.resultadoQuery = resultadoQuery;
 	}
 	
 	

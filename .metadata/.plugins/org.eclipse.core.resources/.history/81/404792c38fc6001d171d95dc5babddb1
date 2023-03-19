@@ -69,15 +69,6 @@ public class Cliente {
 		this.endereco = endereco;
 	}
 	
-	public int getIdCliente() {
-		return idCliente;
-	}
-
-
-
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
-	}
 	
 	public Retorno InsereCliente(Statement declaracaoConexao) {
 		String sql = "INSERT INTO Cliente(Nome, Sobrenome, DtNasc, cpf, Cep, Numero, Complemento)" +
@@ -94,5 +85,20 @@ public class Cliente {
 	
 		return tiposDeRetornos.getSucessoNaInsercao();
 	}
+
+
+
+	public int getIdCliente() {
+		return idCliente;
+	}
+
+
+
+	public void setIdCliente(int idCliente) {
+		this.idCliente = idCliente;
+	}
+
+	
+	
 	
 }

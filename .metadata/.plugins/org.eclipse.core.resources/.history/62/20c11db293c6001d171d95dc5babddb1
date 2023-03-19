@@ -80,19 +80,6 @@ public class Funcoes {
 	
 	
 	
-	public Retorno listaItensTabela(Statement declaracaoConexao, String tabela) {
-		String sql = "SELECT * FROM "+tabela;
-		
-		try {
-			ResultSet resultadoDaBusca = declaracaoConexao.executeQuery(sql);
-			return tiposDeRetornos.retornaRetornoMaisResultSet(tiposDeRetornos.getSucessoNaListagem(), resultadoDaBusca);
-		} catch (SQLException e) {
-			return tiposDeRetornos.retornaRetornoMaisResultSet(tiposDeRetornos.getErroNaListagem(), null);
-		}
-				
-	}
-	
-	
 	public Retorno removeItemTabela(Statement declaracaoConexao, CamposAlteracao campos) {
 		String sql = "DELETE FROM "+campos.getTabela()
 					+" WHERE "+campos.getCampo()+" = '"+campos.getId()+"'";
