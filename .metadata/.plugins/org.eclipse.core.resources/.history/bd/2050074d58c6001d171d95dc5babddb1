@@ -1,10 +1,6 @@
 package main;
 
-import java.sql.SQLException;
-import java.sql.Statement;
-
 public class Produto {
-	public static Retornos tiposDeRetornos = new Retornos();
 	private String nome;
 	private double peso;
 	private double valor;
@@ -34,18 +30,5 @@ public class Produto {
 		this.valor = valor;
 	}
 	
-	
-	public Retorno InsereProduto(Statement declaracaoConexao) {
-		String sql = "INSERT INTO Produtos(Nome, Peso, Valor)" +
-					 " VALUES('"+this.nome+"','"+this.peso+"','"+this.valor+"')";
-				
-			try {
-				declaracaoConexao.executeUpdate(sql);
-			} catch (SQLException e) {
-				return tiposDeRetornos.getErroDeInsercao();
-			}
-	
-		return tiposDeRetornos.getSucessoNaInsercao();
-	}
 	
 }
