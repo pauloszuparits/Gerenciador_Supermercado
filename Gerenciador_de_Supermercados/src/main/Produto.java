@@ -5,15 +5,26 @@ import java.sql.Statement;
 
 public class Produto {
 	public static Retornos tiposDeRetornos = new Retornos();
+	
+	private int idProduto;
 	private String nome;
 	private double peso;
 	private double valor;
+	
 	public Produto(String nome, double peso, double valor) {
 		
 		this.nome = nome;
 		this.peso = peso;
 		this.valor = valor;
 	}
+	
+	public Produto(int idProduto,String nome, double peso, double valor) {
+		this.idProduto = idProduto;
+		this.nome = nome;
+		this.peso = peso;
+		this.valor = valor;
+	}
+	
 	
 	public String getNome() {
 		return nome;
@@ -47,5 +58,15 @@ public class Produto {
 	
 		return tiposDeRetornos.getSucessoNaInsercao();
 	}
+
+	public int getIdProduto() {
+		return idProduto;
+	}
+
+	public void setIdProduto(int idProduto) {
+		this.idProduto = idProduto;
+	}
+	
+	
 	
 }

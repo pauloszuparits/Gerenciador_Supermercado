@@ -3,7 +3,13 @@ package main;
 public class Retornos {
 	private Retorno erroDeInsercao = new Retorno("Erro de inserção na tabela");
 	private Retorno sucessoNaInsercao = new Retorno("Sucesso na insercao na tabela");
+	private Retorno erroNaAlteracao = new Retorno("Erro na alteracao do item na tabela");
+	private Retorno sucessoNaAlteracao = new Retorno("Sucesso na alteracao do item na tabela");
 	
+	public Retorno retornaRetornoMaisProduto(Retorno retornoRecebido, Produto produto) {
+		Retorno retornoEnviar = new Retorno(produto, retornoRecebido.getDescricaoRetorno());
+		return retornoEnviar;
+	}
 	
 	public Retorno getSucessoNaInsercao() {
 		return sucessoNaInsercao;
@@ -12,5 +18,16 @@ public class Retornos {
 	public Retorno getErroDeInsercao() {
 		return erroDeInsercao;
 	}
+	
+	
+	public Retorno getErroNaAlteracao() {
+		return erroNaAlteracao;
+	}
+
+	public Retorno getSucessoNaAlteracao() {
+		return sucessoNaAlteracao;
+	}
+
+	
 	
 }

@@ -1,0 +1,13 @@
+package main;
+
+import java.sql.Statement;
+
+public class Funcoes {
+	public Retornos tiposDeRetornos = new Retornos();
+	
+	public Retorno AlteraProduto(Statement declaracaoConexao, String campo, int idProduto) {
+		String sql = "UPDATE Produtos SET "+"'"+campo+"'"
+					+" WHERE IdProduto = "+ "'"+idProduto+"'";
+		
+	}
+}
