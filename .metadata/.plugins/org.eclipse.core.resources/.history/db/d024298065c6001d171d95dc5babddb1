@@ -8,7 +8,7 @@ public class main {
 		Conexao conexaoComMysql = new Conexao();
 		Statement declaracaoConexao = conexaoComMysql.getConection().createStatement();
 		
-		ArrayList<Retorno> retornos= funcao.buscaProduto(declaracaoConexao, "Fandangos");
+		ArrayList<Retorno> retornos= funcao.buscaProduto(declaracaoConexao, "ama");
 		try {
 			retornos.forEach((n)-> System.out.println(n.getProduto().getValor()));
 		}catch(Exception e) {

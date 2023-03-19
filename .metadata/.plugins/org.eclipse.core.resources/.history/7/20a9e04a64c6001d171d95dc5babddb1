@@ -8,11 +8,7 @@ import java.util.ArrayList;
 public class Funcoes {
 	public Retornos tiposDeRetornos = new Retornos();
 	
-	public boolean isEmptyList(ArrayList lista) {
-		return lista.size() == 0;
-	}
-	
-	public ArrayList<Retorno> buscaProduto(Statement declaracaoConexao, String nome) {
+	public ArrayList procuraProduto(Statement declaracaoConexao, String nome) {
 		ArrayList<Retorno> retornos = new ArrayList<Retorno>();
 		String sql = "SELECT IdProduto, Nome, Peso, Valor From Produtos"
 					+" WHERE Nome = '"+nome+"'";
@@ -32,10 +28,6 @@ public class Funcoes {
 			
 		} catch (SQLException e) {
 			retornos.add(tiposDeRetornos.getErroNaBusca());
-			
-		}
-		if(isEmptyList(retornos)) {
-			retornos.add(tiposDeRetornos.getItemNaoEncontradoBusca());
 		}
 		
 		return(retornos);

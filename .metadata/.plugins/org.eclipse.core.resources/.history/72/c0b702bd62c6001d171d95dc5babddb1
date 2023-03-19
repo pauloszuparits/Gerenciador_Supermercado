@@ -1,0 +1,35 @@
+package main;
+
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Funcoes {
+	public Retornos tiposDeRetornos = new Retornos();
+	
+	public Retorno procuraProduto(Statement declaracaoConexao, String nome) {
+		String sql = "SELECT IdProduto, Nome, Peso, Valor From Produtos"
+					+" WHERE Nome = '"+nome+"'";
+		
+		try {
+			declaracaoConexao.executeUpdate(sql);
+		} catch (SQLException e) {
+			return tiposDeRetornos.
+		}
+	}
+	
+	public Retorno alteraItemTabela(Statement declaracaoConexao, CamposAlteracao campos) {
+		String sql = "UPDATE "+campos.getTabela()
+					+" SET "+campos.getCampo()+"='"+campos.getValorParaAlterarCampo()+"'"
+					+" WHERE IdProduto = "+campos.getId();		
+		
+		try {
+			declaracaoConexao.executeUpdate(sql);
+		} catch (SQLException e) {
+			
+			return tiposDeRetornos.getErroNaAlteracao();
+		}
+		
+		
+		return tiposDeRetornos.getSucessoNaAlteracao();
+	}
+}

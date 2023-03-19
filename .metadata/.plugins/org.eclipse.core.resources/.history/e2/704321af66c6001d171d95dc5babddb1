@@ -8,11 +8,11 @@ public class main {
 		Conexao conexaoComMysql = new Conexao();
 		Statement declaracaoConexao = conexaoComMysql.getConection().createStatement();
 		
-		ArrayList<Retorno> retornos= funcao.buscaProduto(declaracaoConexao, "Fandangos");
-		try {
+		ArrayList<Retorno> retornos= funcao.buscaProduto(declaracaoConexao, "ama");
+		if(funcao.isEmptyList(retornos)) {
+			System.out.println(retornos.get(0).getDescricaoRetorno());			
+		}else {
 			retornos.forEach((n)-> System.out.println(n.getProduto().getValor()));
-		}catch(Exception e) {
-			System.out.println(retornos.get(0).getDescricaoRetorno());
 		}
 		/*
 		CamposAlteracao campos = new CamposAlteracao("Produtos",106, "Peso", "7.66");		

@@ -39,10 +39,6 @@ public class Retornos {
 		return sucessoNaBusca;
 	}
 
-	public Retorno getItemNaoEncontradoBusca() {
-		return itemNaoEncontradoBusca;
-	}
-
 	
 
 	
