@@ -1,0 +1,10 @@
+package main;
+
+public class Erros {
+	private Erro erroDeInsercao = new Erro("Erro de inserção na tabela");
+
+	public Erro getErroDeInsercao() {
+		return erroDeInsercao;
+	}
+	
+}

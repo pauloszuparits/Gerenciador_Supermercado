@@ -1,0 +1,39 @@
+package main;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+
+public class Conexao {
+	private String server;
+	private String database;
+	private String port;               
+	private String user;
+	private String passwd;
+	
+	private Connection conection;
+    
+    public Conexao() {
+    	
+    	try {
+    		server = "localhost";
+    		database = "supermercado";
+    		port = "3306";               
+    		user = "root";
+    		passwd = "Oicueio1!@#$";
+    		
+        	String url = "jdbc:mysql://" + server + ":" + port + "/" + database;
+        	
+        	conection = DriverManager.getConnection(url, user, passwd);
+        	
+        	 	
+        }catch(Exception e){
+        	e.printStackTrace();
+        }
+    	
+    }
+    
+    public Connection getConection() {
+    	return this.conection;
+    }
+}

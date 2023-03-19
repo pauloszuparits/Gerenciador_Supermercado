@@ -1,0 +1,10 @@
+package main;
+import java.sql.*;
+public class main {
+	
+	public static void main(String[] args) {
+		Conexao conexaoComMysql = new Conexao();
+		Produto testeJava = new Produto("TesteJava9090", 99.99, 112.60);
+	}
+
+}

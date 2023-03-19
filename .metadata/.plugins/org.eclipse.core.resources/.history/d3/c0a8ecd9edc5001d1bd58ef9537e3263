@@ -1,0 +1,18 @@
+package main;
+
+public class Retorno {
+	private String descricaoErro;
+	public Retorno(String descricaoErro) {
+		super();
+		this.descricaoErro = descricaoErro;		
+	}
+	public String getDescricaoErro() {
+		return descricaoErro;
+	}
+	public void setDescricaoErro(String descricaoErro) {
+		this.descricaoErro = descricaoErro;
+	}
+	
+	
+	
+}

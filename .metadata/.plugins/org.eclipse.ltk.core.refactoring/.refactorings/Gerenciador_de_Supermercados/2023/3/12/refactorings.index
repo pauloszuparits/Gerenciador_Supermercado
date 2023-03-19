@@ -1,0 +1,5 @@
+1679185226331	Rename type 'Comum'
+1679186087273	Rename field 'descricaoErro'
+1679186130853	Rename local variable 'descricaoErro'
+1679186157633	Rename method 'getDescricaoErro'
+1679186168748	Rename method 'setDescricaoErro'

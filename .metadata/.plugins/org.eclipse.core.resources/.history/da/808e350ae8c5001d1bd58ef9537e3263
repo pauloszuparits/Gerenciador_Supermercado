@@ -1,0 +1,16 @@
+package main;
+
+public class Retornos {
+	private Erro erroDeInsercao = new Erro("Erro de inserção na tabela");
+	private Erro sucessoNaInsercao = new Erro("Sucesso na insercao na tabela");
+	
+	
+	public Erro getSucessoNaInsercao() {
+		return sucessoNaInsercao;
+	}
+
+	public Erro getErroDeInsercao() {
+		return erroDeInsercao;
+	}
+	
+}

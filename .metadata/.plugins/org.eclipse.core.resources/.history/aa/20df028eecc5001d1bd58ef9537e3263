@@ -1,0 +1,33 @@
+package main;
+
+public class Produto {
+	private String nome;
+	private float peso;
+	private float valor;
+	public Produto(String nome, float peso, float valor) {
+		super();
+		this.nome = nome;
+		this.peso = peso;
+		this.valor = valor;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public float getPeso() {
+		return peso;
+	}
+	public void setPeso(float peso) {
+		this.peso = peso;
+	}
+	public float getValor() {
+		return valor;
+	}
+	public void setValor(float valor) {
+		this.valor = valor;
+	}
+	
+	
+}

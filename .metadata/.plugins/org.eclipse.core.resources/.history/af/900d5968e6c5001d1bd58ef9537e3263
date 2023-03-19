@@ -1,0 +1,25 @@
+package main;
+
+public class Erros {
+	private String descricaoErro;
+	private int codigoErro;
+	public Erros(String descricaoErro, int codigoErro) {
+		super();
+		this.descricaoErro = descricaoErro;
+		this.codigoErro = codigoErro;
+	}
+	public String getDescricaoErro() {
+		return descricaoErro;
+	}
+	public void setDescricaoErro(String descricaoErro) {
+		this.descricaoErro = descricaoErro;
+	}
+	public int getCodigoErro() {
+		return codigoErro;
+	}
+	public void setCodigoErro(int codigoErro) {
+		this.codigoErro = codigoErro;
+	}
+	
+	
+}
