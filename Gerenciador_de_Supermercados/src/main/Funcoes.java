@@ -1,5 +1,6 @@
 package main;
 
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -12,6 +13,41 @@ public class Funcoes {
 		return lista.size() == 0;
 	}
 	
+	public ArrayList<Retorno> buscaCliente(Statement declaracaoConexao, String cpfBusca) {
+		ArrayList<Retorno> retornos = new ArrayList<Retorno>();
+		
+		String sql = "SELECT IdCliente,Nome, Sobrenome, DtNasc, cpf, Cep, Numero, Complemento From Cliente"
+					+" WHERE cpf = '"+cpfBusca+"'";
+		
+		try {
+			ResultSet resultadoDaBusca = declaracaoConexao.executeQuery(sql);
+			while(resultadoDaBusca.next()) {
+				
+				int idCliente= resultadoDaBusca.getInt("IdCliente");
+				String nome = resultadoDaBusca.getString("Nome");
+				String sobrenome = resultadoDaBusca.getString("Sobrenome");
+				Date dtNasc = resultadoDaBusca.getDate("DtNasc");
+				String cpf = resultadoDaBusca.getString("cpf");
+				String cep = resultadoDaBusca.getString("cep");
+				int numeroEndereco = resultadoDaBusca.getInt("Numero");
+				String complemento = resultadoDaBusca.getString("Complemento");
+				
+				Endereco enderecoClienteEncontrado = new Endereco(cep, numeroEndereco, complemento);
+				Cliente clienteEncontrado = new Cliente(idCliente, nome, sobrenome, dtNasc, cpf, enderecoClienteEncontrado);
+				
+				retornos.add(tiposDeRetornos.retornaRetornoMaisCliente(tiposDeRetornos.getSucessoNaBusca(), clienteEncontrado));
+			}
+			
+		} catch (SQLException e) {
+			retornos.add(tiposDeRetornos.getErroNaBusca());
+			
+		}
+		if(isEmptyList(retornos)) {
+			retornos.add(tiposDeRetornos.getItemNaoEncontradoBusca());
+		}
+		
+		return(retornos);
+	}
 	
 	public ArrayList<Retorno> buscaProduto(Statement declaracaoConexao, String nome) {
 		ArrayList<Retorno> retornos = new ArrayList<Retorno>();
@@ -41,6 +77,8 @@ public class Funcoes {
 		
 		return(retornos);
 	}
+	
+	
 	
 	public Retorno removeItemTabela(Statement declaracaoConexao, CamposAlteracao campos) {
 		String sql = "DELETE FROM "+campos.getTabela()

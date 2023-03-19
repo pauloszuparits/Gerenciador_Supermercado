@@ -16,6 +16,11 @@ public class Retornos {
 		return retornoEnviar;
 	}
 	
+	public Retorno retornaRetornoMaisCliente(Retorno retornoRecebido, Cliente cliente) {
+		Retorno retornoEnviar = new Retorno(cliente, retornoRecebido.getDescricaoRetorno());
+		return retornoEnviar;
+	}
+	
 	public Retorno getSucessoNaInsercao() {
 		return sucessoNaInsercao;
 	}

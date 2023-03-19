@@ -1,0 +1,44 @@
+package main;
+
+public class Retorno {
+	private String descricaoRetorno;
+	private Produto produto;
+	private Endereco endereco;
+	public Retorno(String descricaoRetorno) {
+		this.descricaoRetorno = descricaoRetorno;		
+	}
+	
+	public Retorno(Produto produto, String descricaoRetorno) {
+		this.produto = produto;
+		this.descricaoRetorno = descricaoRetorno;	
+	}
+	
+	public Retorno(Endereco endereco, String descricaoRetorno) {
+		this.setEndereco(endereco);
+		this.descricaoRetorno = descricaoRetorno;		
+	}
+	
+	public String getDescricaoRetorno() {
+		return descricaoRetorno;
+	}
+	public void setDescricaoRetorno(String descricaoRetorno) {
+		this.descricaoRetorno = descricaoRetorno;
+	}
+	public Produto getProduto() {
+		return produto;
+	}
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+	
+	
+	
+}

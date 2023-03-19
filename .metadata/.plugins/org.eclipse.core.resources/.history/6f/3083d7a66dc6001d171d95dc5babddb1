@@ -1,0 +1,66 @@
+package main;
+
+import java.sql.Date;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Cliente {
+	private String nome;
+	private String sobrenome;
+	private Date DtNasc;
+	private String cpf;
+	private int IdEndereco;
+		
+	
+	public Cliente(String nome, String sobrenome, Date dtNasc, String cpf, int idEndereco) {
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		DtNasc = dtNasc;
+		this.cpf = cpf;
+		setIdEndereco(idEndereco);
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getSobrenome() {
+		return sobrenome;
+	}
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
+	}
+	public Date getDtNasc() {
+		return DtNasc;
+	}
+	public void setDtNasc(Date dtNasc) {
+		DtNasc = dtNasc;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	
+	public Retorno InsereProduto(Statement declaracaoConexao) {
+		String sql = "INSERT INTO Produtos(Nome, Peso, Valor)" +
+					 " VALUES('"+this.nome+"','"+this.peso+"','"+this.valor+"')";
+				
+			try {
+				declaracaoConexao.executeUpdate(sql);
+			} catch (SQLException e) {
+				return tiposDeRetornos.getErroDeInsercao();
+			}
+	
+		return tiposDeRetornos.getSucessoNaInsercao();
+	}
+	public int getIdEndereco() {
+		return IdEndereco;
+	}
+	public void setIdEndereco(int idEndereco) {
+		IdEndereco = idEndereco;
+	}
+	
+}

@@ -7,6 +7,18 @@ public class main {
 		Funcoes funcao = new Funcoes();
 		Conexao conexaoComMysql = new Conexao();
 		Statement declaracaoConexao = conexaoComMysql.getConection().createStatement();
+		ArrayList<Retorno> retornos = funcao.buscaCliente(declaracaoConexao,"123123123");
+		try {
+			retornos.forEach((n)->System.out.println(n.getCliente().getNome() + " " + n.getCliente().getSobrenome()));
+		}catch(Exception e) {
+			System.out.println(retornos.get(0).getDescricaoRetorno());
+		}
+		/*
+		Endereco endereco = new Endereco("04622012", 45, "Ap.212");
+		Cliente cliente = new Cliente("Isabela", "Halker", new Date(26,06,1998), "1597322022", endereco);
+		Retorno retorno = cliente.InsereCliente(declaracaoConexao);
+		System.out.println(retorno.getDescricaoRetorno());
+		*/
 		
 		/*
 		CamposAlteracao campos = new CamposAlteracao("Produtos","IdProduto" ,106);
