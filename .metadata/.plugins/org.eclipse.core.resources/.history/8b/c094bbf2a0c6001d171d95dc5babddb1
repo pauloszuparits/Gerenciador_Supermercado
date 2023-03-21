@@ -1,0 +1,62 @@
+package main;
+
+import java.sql.ResultSet;
+
+public class Retorno {
+	private String descricaoRetorno;
+	private Produto produto;
+	private Cliente cliente;
+	private ResultSet resultadoQuery;
+	
+	public Retorno(String descricaoRetorno) {
+		this.descricaoRetorno = descricaoRetorno;		
+	}
+	
+	public Retorno(Produto produto, String descricaoRetorno) {
+		this.produto = produto;
+		this.descricaoRetorno = descricaoRetorno;	
+	}
+	
+	public Retorno(Cliente cliente, String descricaoRetorno) {
+		this.cliente = cliente;
+		this.descricaoRetorno = descricaoRetorno;		
+	}
+		
+	public Retorno(ResultSet resultadoQuery, String descricaoRetorno) {
+		this.descricaoRetorno = descricaoRetorno;
+		this.resultadoQuery = resultadoQuery;
+	}
+
+	public String getDescricaoRetorno() {
+		return descricaoRetorno;
+	}
+	public void setDescricaoRetorno(String descricaoRetorno) {
+		this.descricaoRetorno = descricaoRetorno;
+	}
+	public Produto getProduto() {
+		return produto;
+	}
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
+
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public ResultSet getResultadoQuery() {
+		return resultadoQuery;
+	}
+
+	public void setResultadoQuery(ResultSet resultadoQuery) {
+		this.resultadoQuery = resultadoQuery;
+	}
+	
+	
+	
+}

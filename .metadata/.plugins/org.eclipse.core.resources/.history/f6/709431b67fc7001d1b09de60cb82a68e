@@ -1,0 +1,50 @@
+package main;
+
+public class CamposAlteracao {
+	private String tabela;
+	private int id;
+	private String campo;
+	private String valorParaAlterarCampo;
+	
+	public CamposAlteracao(String tabela, int id, String campo, String valorParaAlterarCampo) {
+		this.tabela = tabela;
+		this.id = id;
+		this.campo = campo;
+		this.valorParaAlterarCampo = valorParaAlterarCampo;
+	}
+	
+	public CamposAlteracao(String tabela,String campo ,int id) {
+		this.tabela = tabela;
+		this.campo = campo;
+		this.id = id;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getCampo() {
+		return campo;
+	}
+	public void setCampo(String campo) {
+		this.campo = campo;
+	}
+	public String getValorParaAlterarCampo() {
+		return valorParaAlterarCampo;
+	}
+	public void setValorParaAlterarCampo(String valorParaAlterarCampo) {
+		this.valorParaAlterarCampo = valorParaAlterarCampo;
+	}
+
+	public String getTabela() {
+		return tabela;
+	}
+
+	public void setTabela(String tabela) {
+		this.tabela = tabela;
+	}
+	
+	
+}

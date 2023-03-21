@@ -14,6 +14,8 @@ public class Retornos {
 	private Retorno sucessoNaDelecao = new Retorno("Sucesso na delecao do item");
 	private Retorno erroNaListagem = new Retorno("Erro na listagem dos itens");
 	private Retorno sucessoNaListagem = new Retorno("Sucesso na listagem dos itens");
+	private Retorno compraFinalizadaSucesso = new Retorno("Compra finalizada com sucesso");
+	private Retorno compraNaoFinalizadaErro = new Retorno("Compra nao finalizada, ERRO!");
 	
 	public Retorno retornaRetornoMaisProduto(Retorno retornoRecebido, Produto produto) {
 		Retorno retornoEnviar = new Retorno(produto, retornoRecebido.getDescricaoRetorno());
@@ -27,6 +29,16 @@ public class Retornos {
 	
 	public Retorno retornaRetornoMaisResultSet(Retorno retornoRecebido, ResultSet resultadoQuery) {
 		Retorno retornoEnviar = new Retorno(resultadoQuery, retornoRecebido.getDescricaoRetorno());
+		return retornoEnviar;
+	}
+	
+	public Retorno retornaRetornoMaisValorProduto(Retorno retornoRecebido, double valorProduto) {
+		Retorno retornoEnviar = new Retorno(valorProduto, retornoRecebido.getDescricaoRetorno());
+		return retornoEnviar;
+	}
+	
+	public Retorno retornaRetornoMaisValorCompra(Retorno retornoRecebido, double valorTotalCompra) {
+		Retorno retornoEnviar = new Retorno(valorTotalCompra, retornoRecebido.getDescricaoRetorno());
 		return retornoEnviar;
 	}
 	
@@ -74,6 +86,14 @@ public class Retornos {
 
 	public Retorno getSucessoNaListagem() {
 		return sucessoNaListagem;
+	}
+
+	public Retorno getCompraFinalizadaSucesso() {
+		return compraFinalizadaSucesso;
+	}
+
+	public Retorno getCompraNaoFinalizadaErro() {
+		return compraNaoFinalizadaErro;
 	}
 
 	

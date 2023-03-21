@@ -1,0 +1,39 @@
+package main;
+
+
+import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+
+public class FuncoesParaModulosAdministracao {
+	public Retorno cadastrarCliente(Statement declaracaoConexao) throws ParseException {
+		Scanner entradaDados = new Scanner(System.in);
+		System.out.println("Digite o nome do cliente");
+		String nomeCliente = entradaDados.next();
+		System.out.println("Digite o sobrenome do cliente");
+		String sobrenomeCliente = entradaDados.next();
+		System.out.println("Digite a data de nascimento do cliente dd/MM/yyyy");
+		String dtNascCliente = entradaDados.next();
+		System.out.println("Digite o cpf do cliente");
+		String cpfCliente = entradaDados.next();
+		System.out.println("Digite o CEP do endereco do cliente");
+		String cepEnderecoCliente = entradaDados.next();
+		System.out.println("Digite o numero do endereco do cliente");
+		int numeroEnderecoCliente = entradaDados.nextInt();
+		System.out.println("Digite o complemento do endereco do cliente");
+		String complementoEnderecoCliente = entradaDados.next();
+		
+		Endereco enderecoCliente = new Endereco(cepEnderecoCliente, numeroEnderecoCliente, complementoEnderecoCliente);
+		Cliente cliente = new Cliente(nomeCliente, sobrenomeCliente, converteStringemData(dtNascCliente),cpfCliente, enderecoCliente);
+		Retorno retorno = cliente.InsereCliente(declaracaoConexao);
+		return retorno;
+	}
+	
+	public Date converteStringemData(String dateString) throws ParseException {
+		SimpleDateFormat formatadorDeDatas = new SimpleDateFormat("dd/MM/yyyy");
+		Date data = formatadorDeDatas.parse(dateString);
+		return data;
+	}
+}

@@ -7,6 +7,7 @@ public class Retorno {
 	private Produto produto;
 	private Cliente cliente;
 	private ResultSet resultadoQuery;
+	private double valorProduto;
 	
 	public Retorno(String descricaoRetorno) {
 		this.descricaoRetorno = descricaoRetorno;		
@@ -25,6 +26,12 @@ public class Retorno {
 	public Retorno(ResultSet resultadoQuery, String descricaoRetorno) {
 		this.descricaoRetorno = descricaoRetorno;
 		this.resultadoQuery = resultadoQuery;
+	}
+
+	
+	public Retorno(double valorProduto, String descricaoRetorno) {
+		this.descricaoRetorno = descricaoRetorno;
+		this.valorProduto = valorProduto;
 	}
 
 	public String getDescricaoRetorno() {
@@ -55,6 +62,14 @@ public class Retorno {
 
 	public void setResultadoQuery(ResultSet resultadoQuery) {
 		this.resultadoQuery = resultadoQuery;
+	}
+
+	public double getValorProduto() {
+		return valorProduto;
+	}
+
+	public void setValorProduto(double valorProduto) {
+		this.valorProduto = valorProduto;
 	}
 	
 	

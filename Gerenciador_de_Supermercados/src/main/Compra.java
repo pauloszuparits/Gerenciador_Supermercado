@@ -50,10 +50,10 @@ public class Compra {
 			try {
 				declaracaoConexao.executeUpdate(sql);
 			} catch (SQLException e) {
-				return tiposDeRetornos.getErroDeInsercao();
+				return tiposDeRetornos.getCompraNaoFinalizadaErro();
 			}
 		
 	
-		return tiposDeRetornos.getSucessoNaInsercao();
+		return tiposDeRetornos.retornaRetornoMaisValorCompra(tiposDeRetornos.getCompraFinalizadaSucesso(), this.somaCompraCliente);
 	}
 }

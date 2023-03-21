@@ -1,8 +1,0 @@
-package main;
-import java.sql.*;
-public class Comum {
-	public int InsereProduto(Produto produto, Statement declaracaoConexao) {
-		
-		return 1;
-	}
-}

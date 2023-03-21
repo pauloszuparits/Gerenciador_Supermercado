@@ -1,11 +1,21 @@
 package main;
 
 public class CamposAlteracao {
+	private String nomeClausulaWhere;
 	private String tabela;
 	private int id;
 	private String campo;
 	private String valorParaAlterarCampo;
-	
+
+	public CamposAlteracao(String nomeClausulaWhere, String tabela, int id, String campo,
+			String valorParaAlterarCampo) {
+		this.nomeClausulaWhere = nomeClausulaWhere;
+		this.tabela = tabela;
+		this.id = id;
+		this.campo = campo;
+		this.valorParaAlterarCampo = valorParaAlterarCampo;
+	}
+
 	public CamposAlteracao(String tabela, int id, String campo, String valorParaAlterarCampo) {
 		this.tabela = tabela;
 		this.id = id;
@@ -44,6 +54,10 @@ public class CamposAlteracao {
 
 	public void setTabela(String tabela) {
 		this.tabela = tabela;
+	}
+
+	public String getNomeClausulaWhere() {
+		return nomeClausulaWhere;
 	}
 	
 	
