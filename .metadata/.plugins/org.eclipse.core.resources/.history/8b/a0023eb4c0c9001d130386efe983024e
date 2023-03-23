@@ -60,7 +60,7 @@ public class Compra {
 
 	@Override
 	public String toString() {
-		return "Valor total da compra: " + this.somaCompraCliente + " Data Compra:" + this.dtCompra;
+		return "Valor total da compra: " + this.somaCompraCliente + "Data Compra:" + this.dtCompra;
 	}
 	
 	

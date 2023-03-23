@@ -19,8 +19,10 @@ A funcionalidade de administrar o sistema serve para o usuário ter um acesso ao
 **Módulo Compra**  
 Cada um destes módulos possui funcionalidades.  
 Os módulos **cliente e produto** possuem as funcionalidades de:  
-Cadastrar, alterar, listar e buscar.
-Já o módulo de **compras** possui a funcionalidade de listar todas as compras feitas por um cliente em específico.  
+Cadastrar, alterar, listar e buscar.  
+![Imagem exemplo de um cadastro de produto](imgs/ExemploCadastroProduto.png)  
 
-![Imagem exemplo de um cadastro de produto](imgs/ExemploCadastroProduto.png)
+Já o módulo de **compras** possui a funcionalidade de listar todas as compras feitas por um cliente em específico.  
+![Imagem exemplo de uma listagem de compra por cliente](ExemploListagemCompras.png)
+
 

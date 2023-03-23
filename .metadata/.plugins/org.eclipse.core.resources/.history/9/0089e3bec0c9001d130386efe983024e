@@ -92,7 +92,6 @@ public class main {
 				break;
 			case 3:
 				moduloCompra();
-				break;
 			default:
 				System.out.println("Opcao Invalida");
 		}
