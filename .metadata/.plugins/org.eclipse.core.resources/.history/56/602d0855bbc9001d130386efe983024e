@@ -56,9 +56,8 @@ public class main {
 			
 			Compra compraComCliente = new Compra(idClienteEncontrado,somaValorProduto,new Date(System.currentTimeMillis()));
 			Retorno retornoCompra = compraComCliente.InsereCompra(declaracaoConexao);
-			String valorTotalCompraArredondado = String.format("%.2d", retornoCompra.getValorProduto());
 			try {
-				System.out.println(retornoCompra.getDescricaoRetorno() + "\nValor total da compra: " + valorTotalCompraArredondado);
+				System.out.println(retornoCompra.getDescricaoRetorno() + "\nValor total da compra: " + retornoCompra.getValorProduto());
 			}catch(Exception e) {
 				System.out.println(retornoCompra.getDescricaoRetorno());
 			}
