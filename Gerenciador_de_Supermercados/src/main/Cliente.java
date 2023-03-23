@@ -14,7 +14,7 @@ public class Cliente {
 	private Date dtNasc;
 	private String cpf;
 	private Endereco endereco;
-		
+	private Compra compra;
 	
 	public Cliente(String nome, String sobrenome, Date dtNasc, String cpf, Endereco endereco) {
 		this.nome = nome;
@@ -26,6 +26,15 @@ public class Cliente {
 	
 	
 	
+	public Cliente(String nome, String sobrenome, Date dtNasc, Compra compra) {
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.dtNasc = dtNasc;
+		this.setCompra(compra);
+	}
+
+
+
 	public Cliente(int idCliente, String nome, String sobrenome, Date dtNasc, String cpf, Endereco endereco) {
 		this.setIdCliente(idCliente);
 		this.nome = nome;
@@ -80,11 +89,21 @@ public class Cliente {
 		this.idCliente = idCliente;
 	}
 	
+	public Compra getCompra() {
+		return compra;
+	}
+
+
+
+	public void setCompra(Compra compra) {
+		this.compra = compra;
+	}
+	
 	public Retorno InsereCliente(Statement declaracaoConexao) {
 		String sql = "INSERT INTO Cliente(Nome, Sobrenome, DtNasc, cpf, Cep, Numero, Complemento)" +
 					 " VALUES('"+this.nome+"','"+this.sobrenome+"','"+this.dtNasc+"','"+this.cpf+"','"+
 					 this.endereco.getCep()+"','"+this.endereco.getNumero()+"','"+this.endereco.getComplemento()+"')";
-				
+		
 		
 			try {
 				declaracaoConexao.executeUpdate(sql);
@@ -95,5 +114,20 @@ public class Cliente {
 	
 		return tiposDeRetornos.getSucessoNaInsercao();
 	}
+
+	public String retornaClienteMaisCompra() {
+		return "Nome: "+ this.nome + " " + this.sobrenome + ", Data Nasc: " + this.dtNasc + " " + this.compra;
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente [idCliente=" + idCliente + ", nome=" + nome + ", sobrenome=" + sobrenome + ", dtNasc=" + dtNasc
+				+ ", cpf=" + cpf + ", endereco=" + endereco + "]";
+	}
+
+	
+
+	
+	
 	
 }

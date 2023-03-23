@@ -10,7 +10,7 @@ public class FuncoesParaClasses {
 	public Retornos tiposDeRetornos = new Retornos();
 	
 	public boolean isEmptyList(ArrayList lista) {
-		return lista.size() == 0;
+		return lista.size() <= 0;
 	}
 	
 	public ArrayList<Retorno> buscaCliente(Statement declaracaoConexao, String cpfBusca) {
@@ -46,7 +46,7 @@ public class FuncoesParaClasses {
 			retornos.add(tiposDeRetornos.getItemNaoEncontradoBusca());
 		}
 		
-		return(retornos);
+		return retornos;
 	}
 	
 	public Retorno buscaValorProduto(Statement declaracaoConexao, String id) {

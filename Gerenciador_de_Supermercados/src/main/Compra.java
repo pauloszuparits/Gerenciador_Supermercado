@@ -56,4 +56,12 @@ public class Compra {
 	
 		return tiposDeRetornos.retornaRetornoMaisValorCompra(tiposDeRetornos.getCompraFinalizadaSucesso(), this.somaCompraCliente);
 	}
+
+
+	@Override
+	public String toString() {
+		return "Valor total da compra: " + this.somaCompraCliente + "Data Compra:" + this.dtCompra;
+	}
+	
+	
 }

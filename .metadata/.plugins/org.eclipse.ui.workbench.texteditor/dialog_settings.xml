@@ -8,6 +8,7 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="g"/>
 			<item value="&apos;"/>
 		</list>
 		<list key="replacehistory">

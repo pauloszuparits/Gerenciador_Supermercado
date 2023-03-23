@@ -1,0 +1,161 @@
+package main;
+import java.sql.*;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class main {
+	
+	public static void main(String[] args) throws SQLException, ParseException {
+		
+		Scanner entradaDados = new Scanner(System.in);
+		System.out.println("Bem-vindo ao gerenciador de supermercado");
+		System.out.println("Deseja \n1-Iniciar uma Venda\n2-Administrar o sistema");
+		int vendaOuAdministracao = entradaDados.nextInt();
+		if(vendaOuAdministracao == 1) {
+			iniciaVenda();
+		}else {
+			iniciaAdministracaoSistema();
+		}
+		
+		entradaDados.close();
+	}
+	
+	public static void iniciaVenda() throws SQLException {
+		
+		
+		FuncoesParaClasses funcao = new FuncoesParaClasses();
+		Conexao conexaoComMysql = new Conexao();
+		Statement declaracaoConexao = conexaoComMysql.getConection().createStatement();
+		
+		Scanner entradaDados = new Scanner(System.in);
+		
+		System.out.println("Deseja incluir cliente na compra (S/N)");
+		boolean incluiClienteCompra = entradaDados.next().toUpperCase().equals("S");
+		
+		System.out.println("Passe as compras! - Escape = exit");
+		String idProduto = "0";
+		double valorProduto = 0.0;
+		double somaValorProduto = 0.0;
+		int idClienteGenerico = -1;
+		
+		while(!idProduto.equals("exit")) {
+			idProduto = entradaDados.next();
+			valorProduto = funcao.buscaValorProduto(declaracaoConexao, idProduto).getValorProduto();
+			somaValorProduto += valorProduto;
+		}
+		
+		if(incluiClienteCompra) {
+			int idClienteEncontrado = idClienteGenerico;
+			System.out.println("Digite o CPF do cliente");
+			String cpfDigitado = entradaDados.next();
+			try {
+				idClienteEncontrado = funcao.buscaCliente(declaracaoConexao, cpfDigitado).get(0).getCliente().getIdCliente();
+			}catch(Exception e) {
+				System.out.println(funcao.buscaCliente(declaracaoConexao, cpfDigitado).get(0).getDescricaoRetorno());
+			}
+			
+			Compra compraComCliente = new Compra(idClienteEncontrado,somaValorProduto,new Date(System.currentTimeMillis()));
+			Retorno retornoCompra = compraComCliente.InsereCompra(declaracaoConexao);
+			try {
+				System.out.println(retornoCompra.getDescricaoRetorno() + "\nValor total da compra: " + retornoCompra.getValorProduto());
+			}catch(Exception e) {
+				System.out.println(retornoCompra.getDescricaoRetorno());
+			}
+			
+		}else {
+			Compra compraSemCliente = new Compra(idClienteGenerico, somaValorProduto, new Date(System.currentTimeMillis()));
+			Retorno retornoCompra = compraSemCliente.InsereCompra(declaracaoConexao);
+			try {
+				System.out.println(retornoCompra.getDescricaoRetorno() + "\nValor total da compra: " + retornoCompra.getValorProduto());
+			}catch(Exception e) {
+				System.out.println(retornoCompra.getDescricaoRetorno());
+			}
+		}
+		
+		entradaDados.close();
+	}
+	
+	public static void iniciaAdministracaoSistema() throws SQLException, ParseException{	
+		Scanner entradaDados = new Scanner(System.in);
+		
+		System.out.println("Bem vindo a administracao do sistema");
+		System.out.println("Deseja administrar qual Módulo:");
+		System.out.println("1-Cliente\n2-Produto\n3-Compra");
+		int escolhaModuloUsuario = entradaDados.nextInt();
+		switch(escolhaModuloUsuario) {
+			case 1:
+				moduloCliente();
+			case 2:
+				moduloProduto();
+			case 3:
+				moduloCompra();
+			default:
+				System.out.println("Opcao Invalida");
+		}
+		entradaDados.close();
+	}
+	
+	public static void moduloCliente() throws SQLException, ParseException {
+		FuncoesParaModulosAdministracao funcaoModulo = new FuncoesParaModulosAdministracao();
+		Conexao conexaoComMysql = new Conexao();
+		Statement declaracaoConexao = conexaoComMysql.getConection().createStatement();
+		Scanner entradaDados = new Scanner(System.in);
+		
+		System.out.println("Você deseja:");
+		System.out.println("1-Cadastrar cliente\n2-Alterar cliente\n3-Listar clientes\n4-Buscar Cliente");
+		int escolhaAcaoUsuario = entradaDados.nextInt();
+		entradaDados.close();
+		switch(escolhaAcaoUsuario) {
+			case 1:			
+				Retorno retornoCadastroCliente = funcaoModulo.cadastrarCliente(declaracaoConexao);
+				System.out.println(retornoCadastroCliente.getDescricaoRetorno());
+				return;
+			
+			case 2:
+				Retorno retornoAlterarCliente = funcaoModulo.alterarCliente(declaracaoConexao);
+				System.out.println(retornoAlterarCliente.getDescricaoRetorno());
+				return;
+			
+			case 3:
+				ArrayList<Retorno> listaDeClientes = funcaoModulo.listaClientes(declaracaoConexao);
+				try {
+					listaDeClientes.forEach(cliente -> System.out.println(cliente.getCliente()));
+				}catch(Exception e) {
+					System.out.println(listaDeClientes.get(0).getDescricaoRetorno());
+				}
+			
+			case 4:
+				ArrayList<Retorno> retornoBuscaCliente = funcaoModulo.buscarCliente(declaracaoConexao);
+				try {
+					retornoBuscaCliente.forEach((cliente)->System.out.println(cliente.getCliente()));
+				}catch(Exception e) {
+					System.out.println(retornoBuscaCliente.get(0).getDescricaoRetorno());
+				}
+				
+			entradaDados.close();
+		}
+	}
+
+	public static void moduloProduto() throws SQLException {
+		FuncoesParaClasses funcao = new FuncoesParaClasses();
+		Conexao conexaoComMysql = new Conexao();
+		Statement declaracaoConexao = conexaoComMysql.getConection().createStatement();
+		Scanner entradaDados = new Scanner(System.in);
+		
+		
+	}
+	
+	public static void moduloCompra() throws SQLException {
+		FuncoesParaClasses funcao = new FuncoesParaClasses();
+		Conexao conexaoComMysql = new Conexao();
+		Statement declaracaoConexao = conexaoComMysql.getConection().createStatement();
+		Scanner entradaDados = new Scanner(System.in);
+		
+		
+	}
+	
+	public static boolean isZero(double numero) {
+		return numero <= 0.0;
+	}
+
+}

@@ -1,0 +1,58 @@
+package main;
+
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class FuncoesModuloProduto {
+	public Retorno cadastrarProduto(Statement declaracaoConexao) {
+		Scanner entradaDados = new Scanner(System.in);
+
+		System.out.println("Digite o nome do produto");
+		String nomeProduto = entradaDados.next();
+		System.out.println("Digite o peso do produto");
+		double pesoProduto = entradaDados.nextDouble();
+		System.out.println("Digite o valor do produto");
+		double valorProduto = entradaDados.nextDouble();
+		
+		Produto produto = new Produto(nomeProduto, pesoProduto, valorProduto);
+		
+		entradaDados.close();
+		return produto.InsereProduto(declaracaoConexao);
+	}
+	
+	public Retorno alterarProduto(Statement declaracaoConexao) {
+		FuncoesParaClasses funcao = new FuncoesParaClasses();
+		Scanner entradaDados = new Scanner(System.in);
+		System.out.print("Digite o id do produto");
+		int idProduto = entradaDados.nextInt();
+		System.out.println("Digite o campo que será alterado");
+		String campoAlterar = entradaDados.next();
+		System.out.println("Digite o novo valor para o campo");
+		String novoValorCampo = entradaDados.next();
+		
+		CamposAlteracao camposAlterar = new CamposAlteracao("IdProduto", "Produtos", idProduto, campoAlterar, novoValorCampo);
+		
+		entradaDados.close();
+		return funcao.alteraItemTabela(declaracaoConexao, camposAlterar);
+	}
+	
+	public ArrayList<Retorno> listarProdutos(Statement declaracaoConexao){
+		Retornos tiposDeRetornos = new Retornos();
+		ArrayList<Retorno> retornosListagem = new ArrayList<>();
+		FuncoesParaClasses funcao = new FuncoesParaClasses();
+		
+		try {
+			Retorno retorno = funcao.listaItensTabela(declaracaoConexao, "Cliente");
+			ResultSet resultadoListagem = retorno.getResultadoQuery();
+			while(resultadoListagem.next()) {
+				int idProduto = resultadoListagem.getInt("IdProduto");
+				String nomeProduto = resultadoListagem.getString("Nome");
+				
+			}
+		}catch(Exception e) {
+			
+		}
+	}
+}

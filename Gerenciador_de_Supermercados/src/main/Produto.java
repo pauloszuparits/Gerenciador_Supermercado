@@ -68,6 +68,11 @@ public class Produto {
 		return tiposDeRetornos.getSucessoNaInsercao();
 	}
 
+	@Override
+	public String toString() {
+		return "Produto [idProduto=" + idProduto + ", nome=" + nome + ", peso=" + peso + ", valor=" + valor + "]";
+	}
+
 	
 	
 }

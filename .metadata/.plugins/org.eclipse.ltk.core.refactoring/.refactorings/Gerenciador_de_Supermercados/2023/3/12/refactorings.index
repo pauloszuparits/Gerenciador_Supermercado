@@ -31,3 +31,7 @@
 1679264790842	Encapsulate field 'compraNaoFinalizadaErro'
 1679357057855	Rename type 'Funcoes'
 1679358759312	Encapsulate field 'nomeClausulaWhere'
+1679494521182	Rename type 'FuncoesParaModulosAdministracao'
+1679494614922	Rename local variable 'funcaoModulo'
+1679505527420	Rename local variable 'retornosListagem'
+1679533207231	Encapsulate field 'compra'

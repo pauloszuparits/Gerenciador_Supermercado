@@ -1,0 +1,20 @@
+package main;
+
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class FuncoesModuloProduto {
+	public Retorno cadastrarProduto(Statement declaracaoConexao) {
+		Scanner entradaDados = new Scanner(System.in);
+
+		System.out.println("Digite o nome do produto");
+		String nomeProduto = entradaDados.next();
+		System.out.println("Digite o peso do produto");
+		double pesoProduto = entradaDados.nextDouble();
+		System.out.println("Digite o valor do produto");
+		double valorProduto = entradaDados.nextDouble();
+		
+		Produto produto = new Produto(nomeProduto, pesoProduto, valorProduto);
+		return produto.InsereProduto(declaracaoConexao);
+	}
+}

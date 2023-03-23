@@ -3,10 +3,16 @@
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="main.Retornos"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="main.CamposAlteracao"/>
-    <fullyQualifiedTypeName name="java.sql.Date"/>
-    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="main.FuncoesParaModulosAdministracao"/>
+    <fullyQualifiedTypeName name="main.CamposAlteracao"/>
+    <fullyQualifiedTypeName name="main.FuncoesModuloProduto"/>
+    <fullyQualifiedTypeName name="main.Produto"/>
+    <fullyQualifiedTypeName name="main.FuncoesParaClasses"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="main.FuncoesModuloCompra"/>
 </qualifiedTypeNameHistroy>
