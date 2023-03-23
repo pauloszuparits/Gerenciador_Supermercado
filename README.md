@@ -23,6 +23,6 @@ Cadastrar, alterar, listar e buscar.
 ![Imagem exemplo de um cadastro de produto](imgs/ExemploCadastroProduto.png)  
 
 Já o módulo de **compras** possui a funcionalidade de listar todas as compras feitas por um cliente em específico.  
-![Imagem exemplo de uma listagem de compra por cliente](ExemploListagemCompras.png)
+![Imagem exemplo de uma listagem de compra por cliente](imgs/ExemploListagemCompras.png)
 
 
