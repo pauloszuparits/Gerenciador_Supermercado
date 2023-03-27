@@ -95,4 +95,27 @@ A compra possui 2 métodos:
 - InsereCompra -> recebe a declaração de conexão, insere a compra no banco de dados e retorna um objeto Retorno.
 - toString -> retorna uma string contendo os dados da compra  
 
-![Metodos classe compra]()
+![Metodos classe compra]()  
+
+#### Conexao
+
+A classe conexao possui 6 parametros, sendo eles:  
+
+- String server;
+- String database;
+- String port;               
+- String user;
+- String passwd;
+	
+- Connection conection;
+
+A classe não possui construtor. Ao instancia-la, a classe entra em um "try catch" onde os parametros são inicializados com os dados do banco e a variavel conection é atribuida por uma função getConnection da classe DriveManager.  
+
+![Classe conexao]()
+
+##### Métodos  
+
+A classe conexão possui 1 método:
+-getConection -> Retorna this.conection;  
+    
+![Metodos da classe conexao]()  
