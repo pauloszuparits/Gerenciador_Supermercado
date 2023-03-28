@@ -31,6 +31,30 @@ Já o módulo de **compras** possui a funcionalidade de listar todas as compras 
 
 ### Classes  
 
+#### Conexao
+
+A classe conexao possui 6 parametros, sendo eles:  
+
+- String server;
+- String database;
+- String port;               
+- String user;
+- String passwd;
+	
+- Connection conection;
+
+A classe não possui construtor. Ao instancia-la, a classe entra em um "try catch" onde os parametros são inicializados com os dados do banco e a variavel conection é atribuida por uma função getConnection da classe DriveManager.  
+
+![Classe conexao]()
+
+##### Métodos  
+
+
+A classe conexão possui 1 método:
+-getConection -> Retorna this.conection;  
+    
+![Metodos da classe conexao]()  
+
 #### Cliente  
 
 A classe cliente possui 7 parâmetros, sendo eles:
@@ -57,6 +81,21 @@ O cliente possue 3 métodos:
 
 ![Métodos classe cliente]()  
 
+#### Endereço  
+
+A classe endereço possui 3 parametros, sendo eles:
+- String cep;
+- int numero;
+- String complemento;  
+
+E possui 1 construtor que recebe cep, numero e complemento.  
+
+![Construtores classe endereço]()
+
+##### Métodos  
+
+Todos os parametros possuem métodos "get e set". 
+
 #### Produto
 
 A classe produto possui 4 parametros, sendo eles:
@@ -71,6 +110,8 @@ E possui 2 construtores, 1 deles recebe nome, peso e valor. O outro recebe IdPro
 
 ##### Métodos  
 
+Todos os parametros possuem métodos "get e set". 
+
 O produto possui 2 métodos:
 - InsereProduto -> recebe a declaração de conexão, insere o cliente no banco de dados e retorna um objeto Retorno
 - toString -> retorna uma string contendo os dados do produto.  
@@ -81,9 +122,9 @@ O produto possui 2 métodos:
 #### Compra  
 
 A classe compra possui 3 parametros, sendo eles:
--	int idCliente;
--	double somaCompraCliente;
--	Date dtCompra;  
+- int idCliente;
+- double somaCompraCliente;
+- Date dtCompra;  
 
 E possui um construtor que recebe, idCliente, somaCompraCliente, dtCompra  
 
@@ -91,31 +132,59 @@ E possui um construtor que recebe, idCliente, somaCompraCliente, dtCompra
 
 ##### Métodos  
 
+Todos os parametros possuem métodos "get e set". 
+
 A compra possui 2 métodos:
 - InsereCompra -> recebe a declaração de conexão, insere a compra no banco de dados e retorna um objeto Retorno.
 - toString -> retorna uma string contendo os dados da compra  
 
 ![Metodos classe compra]()  
 
-#### Conexao
+#### Retorno
 
-A classe conexao possui 6 parametros, sendo eles:  
+A classe retorno possui 5 parâmetros, sendo eles:  
+- String descricaoRetorno;
+- Produto produto;
+- Cliente cliente;
+- ResultSet resultadoQuery;
+- double valorProduto;
 
-- String server;
-- String database;
-- String port;               
-- String user;
-- String passwd;
-	
-- Connection conection;
+E possui 5 construtores, o primeiro recebe descricaoRetorno, o segundo recebe cliente e descricaoRetorno, o terceito recebe resultadoQuery e descricaoRetorno e o ultimo recebe valorProduto e descricaoRetorno.  
 
-A classe não possui construtor. Ao instancia-la, a classe entra em um "try catch" onde os parametros são inicializados com os dados do banco e a variavel conection é atribuida por uma função getConnection da classe DriveManager.  
-
-![Classe conexao]()
+![Construtores da classe Retorno]()
 
 ##### Métodos  
 
-A classe conexão possui 1 método:
--getConection -> Retorna this.conection;  
-    
-![Metodos da classe conexao]()  
+Todos os parametros possuem métodos "get e set".  
+
+#### Retornos  
+
+A classe retorno possui 13 parametros estáticos, sendo eles:
+- Retorno erroDeInsercao = new Retorno("Erro de inserção na tabela");
+- Retorno sucessoNaInsercao = new Retorno("Sucesso na insercao na tabela");
+- Retorno erroNaAlteracao = new Retorno("Erro na alteracao do item na tabela");
+- Retorno sucessoNaAlteracao = new Retorno("Sucesso na alteracao do item na tabela");
+- Retorno erroNaBusca = new Retorno("Erro na procura do item");
+- Retorno itemNaoEncontradoBusca = new Retorno("Erro na busca pelo item, item nao encontrado");
+- Retorno sucessoNaBusca = new Retorno("Sucesso na busca, Item encontrado");
+- Retorno erroNaDelecao = new Retorno("Erro na delecao do item");
+- Retorno sucessoNaDelecao = new Retorno("Sucesso na delecao do item");
+- Retorno erroNaListagem = new Retorno("Erro na listagem dos itens");
+- Retorno sucessoNaListagem = new Retorno("Sucesso na listagem dos itens");
+- Retorno compraFinalizadaSucesso = new Retorno("Compra finalizada com sucesso");
+- Retorno compraNaoFinalizadaErro = new Retorno("Compra nao finalizada, ERRO!");  
+
+E a classe retornos não possui construtores.  
+
+![Parametros da classe Retornos]() 
+
+##### Métodos  
+Todos os parametros possuem métodos "get e set". 
+
+A classe Retornos possui 5 métodos:  
+- retornaRetornoMaisProduto -> recebe um Retorno e um Produto e retorna um Retorno contendo os dois parametros recebidos.
+- retornaRetornoMaisCliente -> recebe um Retorno e um Cliente e retorna um Retorno contendo os dois parametros recebidos.
+- retornaRetornoMaisResultSet -> recebe um Retorno e um ResultSet e retorna um Retorno contendo os dois parametros recebidos.
+- retornaRetornoMaisValorProduto -> recebe um Retorno e um double e retorna um Retorno contendo os dois parametros recebidos.
+- retornaRetornoMaisValorCompra -> recebe um retorno e um double e retorna um Retorno contendo os dois parametros recebidos.  
+![Métodos da classe Retornos]()
