@@ -187,4 +187,67 @@ A classe Retornos possui 5 métodos:
 - retornaRetornoMaisResultSet -> recebe um Retorno e um ResultSet e retorna um Retorno contendo os dois parametros recebidos.
 - retornaRetornoMaisValorProduto -> recebe um Retorno e um double e retorna um Retorno contendo os dois parametros recebidos.
 - retornaRetornoMaisValorCompra -> recebe um retorno e um double e retorna um Retorno contendo os dois parametros recebidos.  
-![Métodos da classe Retornos]()
+![Métodos da classe Retornos]()  
+
+#### CamposAlteracao  
+
+A classe possui 5 parametros, sendo eles:
+- String nomeClausulaWhere;
+- String tabela;
+- int id;
+- String campo;
+- String valorParaAlterarCampo;  
+
+E a classe CamposAlteracao possui 3 construtores, o primeiro recebe nomeClausulaWhere, tabela, id e campo, o segundo recebe tabela, id, campo e valorParaAlterarCampo e o ultimo recebe tabela, campo e id.  
+
+![Construtores da classe CamposAlteracao]()  
+
+##### Métodos  
+
+Todos os parametros possuem métodos "get e set". 
+
+### Classes auxiliares  
+
+São 4 classes auxiliares ao todo, das quais possuem apenas funções:  
+- FuncoesModuloCliente
+- FuncoesModuloProduto
+- FuncoesModuloCompra
+- FuncoesParaClasses  
+
+#### FuncoesParaClasses
+
+A classe possui 7 métodos, sendo eles:
+- isEmptyList -> recebe uma lista e retorna um boolean
+- buscaCliente -> recebe uma declaracao de conexão e uma string e retorna um retorno do tipo cliente mais retorno
+- buscaValorProduto -> recebe uma declaracao de conexão e uma String id e retorna um retorno do tipo double mais retorno
+- buscaProduto -> recebe uma declaração de conexao e uma string e retorna um retorno do tipo produto mais retorno  
+- listaItensTabela -> recebe uma declaracao de conexao e uma string e retorna um retorno do tipo ResultSet mais retorno  
+- removeItem tabela -> recebe uma declaracao de conexao e um CamposAlteracao e retorna um retorno  
+- alteraItemTabela -> recebe uma declaracao de conexao e um CamposAlteracao e retorna um retorno  
+
+![buscaCliente funcao]()  
+
+![buscaValorProduto funcao]()  
+
+![buscaProduto funcao]()  
+
+![listaEremoveItens funcao]()  
+
+![alteraItemTabela funcao]()  
+
+#### FuncoesModuloCliente  
+
+A classe possui 4 métodos, sendo eles:
+
+- cadastrarCliente -> recebe uma declaracao de conexao, e chama a funcao insereCliente da classe cliente
+- alterarCliente -> recebe uma declaracao de conexao, e chama a funcao alteraItemTabela das FuncoesParaClasses
+- listaClientes -> recebe uma declaracao de conexao, chama a funcao listaItensTabela das FuncoesParaClasses e retorna um ArrayList
+- buscaCliente -> recebe uma declaracao de conexao, e chama a funcao buscaCliente das FuncoesParaClasses  
+
+![cadastrarCliente funcao]()  
+
+![alterarCliente funcao]()  
+
+![listarClientes funcao]()  
+
+![buscarCliente funcao]()
