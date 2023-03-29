@@ -250,4 +250,31 @@ A classe possui 4 métodos, sendo eles:
 
 ![listarClientes funcao]()  
 
-![buscarCliente funcao]()
+![buscarCliente funcao]()  
+
+#### FuncoesModuloProduto 
+
+A classe possui 4 métodos, sendo eles:
+
+- cadastrarProduto -> recebe uma declaracao de conexao, e chama a funcao insereProduto da classe cliente
+- alterarProduto -> recebe uma declaracao de conexao, e chama a funcao alteraItemTabela das FuncoesParaClasses
+- listaProduto -> recebe uma declaracao de conexao, chama a funcao listaItensTabela das FuncoesParaClasses e retorna um ArrayList
+- buscaProduto -> recebe uma declaracao de conexao, e chama a funcao buscaProduto das FuncoesParaClasses  
+
+![cadastrarProduto funcao]()  
+
+![alterarProduto funcao]()  
+
+![listarProduto funcao]()  
+
+![buscarProduto funcao]()  
+
+#### FuncoesModuloCompra  
+
+A classe possui apenas 1 método, sendo ele:
+
+- listaComprasCliente -> recebe uma declaração de conexão e retorna um ArrayList  
+
+![listaComprasCliente funcao]()  
+
+
