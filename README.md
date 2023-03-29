@@ -45,7 +45,7 @@ A classe conexao possui 6 parametros, sendo eles:
 
 A classe não possui construtor. Ao instancia-la, a classe entra em um "try catch" onde os parametros são inicializados com os dados do banco e a variavel conection é atribuida por uma função getConnection da classe DriveManager.  
 
-![Classe conexao]()
+![Classe conexao](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/Conexao.png)
 
 ##### Métodos  
 
@@ -53,7 +53,7 @@ A classe não possui construtor. Ao instancia-la, a classe entra em um "try catc
 A classe conexão possui 1 método:
 -getConection -> Retorna this.conection;  
     
-![Metodos da classe conexao]()  
+![Metodos da classe conexao](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/Metodos/MetodosConexao.png)  
 
 #### Cliente  
 
@@ -68,7 +68,7 @@ A classe cliente possui 7 parâmetros, sendo eles:
 
 E possui 3 construtores, 1 deles recebe nome, sobrenome, dtNasc, cpf, endereço, o outro construtor recebe nome, sobrenome, drNasc e compra e o ulitmo construtor recebe idCliente, nome, sobrenome, dtNasc, cpf, endereco.  
 
-![Construtores classe cliente]()
+![Construtores classe cliente](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/Construtores/ConstrutoresCLiente.png)
 
 ##### Métodos
 
@@ -79,7 +79,7 @@ O cliente possue 3 métodos:
 - retornaClienteMaisCompra -> retorna uma string que contém nome, sobrenome, dtNasc, e compra
 - toString -> retorna uma string contendo os dados do cliente.  
 
-![Métodos classe cliente]()  
+![Métodos classe cliente](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/Metodos/MetodosCliente.png)  
 
 #### Endereço  
 
@@ -90,7 +90,7 @@ A classe endereço possui 3 parametros, sendo eles:
 
 E possui 1 construtor que recebe cep, numero e complemento.  
 
-![Construtores classe endereço]()
+![Construtores classe endereço](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/Construtores/ConstrutoresEndereco.png)
 
 ##### Métodos  
 
@@ -106,7 +106,7 @@ A classe produto possui 4 parametros, sendo eles:
 
 E possui 2 construtores, 1 deles recebe nome, peso e valor. O outro recebe IdProduto, nome, peso e valor.  
 
-![Construtores classe produto]()  
+![Construtores classe produto](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/Construtores/ConstrutoresProduto.png)  
 
 ##### Métodos  
 
@@ -116,7 +116,7 @@ O produto possui 2 métodos:
 - InsereProduto -> recebe a declaração de conexão, insere o cliente no banco de dados e retorna um objeto Retorno
 - toString -> retorna uma string contendo os dados do produto.  
 
-![Metodos classe produto]()  
+![Metodos classe produto](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/Metodos/MetodosProduto.png)  
 
 
 #### Compra  
@@ -128,7 +128,7 @@ A classe compra possui 3 parametros, sendo eles:
 
 E possui um construtor que recebe, idCliente, somaCompraCliente, dtCompra  
 
-![Construtores classe compra]()
+![Construtores classe compra](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/Construtores/ConstrutoresCompra.png)
 
 ##### Métodos  
 
@@ -138,7 +138,7 @@ A compra possui 2 métodos:
 - InsereCompra -> recebe a declaração de conexão, insere a compra no banco de dados e retorna um objeto Retorno.
 - toString -> retorna uma string contendo os dados da compra  
 
-![Metodos classe compra]()  
+![Metodos classe compra](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/Metodos/MetodosCompra.png)  
 
 #### Retorno
 
@@ -151,7 +151,7 @@ A classe retorno possui 5 parâmetros, sendo eles:
 
 E possui 5 construtores, o primeiro recebe descricaoRetorno, o segundo recebe cliente e descricaoRetorno, o terceito recebe resultadoQuery e descricaoRetorno e o ultimo recebe valorProduto e descricaoRetorno.  
 
-![Construtores da classe Retorno]()
+![Construtores da classe Retorno](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/Construtores/ConstrutoresRetorno.png)
 
 ##### Métodos  
 
@@ -176,7 +176,7 @@ A classe retorno possui 13 parametros estáticos, sendo eles:
 
 E a classe retornos não possui construtores.  
 
-![Parametros da classe Retornos]() 
+![Parametros da classe Retornos](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/ParametrosRetornoS.png) 
 
 ##### Métodos  
 Todos os parametros possuem métodos "get e set". 
@@ -187,7 +187,8 @@ A classe Retornos possui 5 métodos:
 - retornaRetornoMaisResultSet -> recebe um Retorno e um ResultSet e retorna um Retorno contendo os dois parametros recebidos.
 - retornaRetornoMaisValorProduto -> recebe um Retorno e um double e retorna um Retorno contendo os dois parametros recebidos.
 - retornaRetornoMaisValorCompra -> recebe um retorno e um double e retorna um Retorno contendo os dois parametros recebidos.  
-![Métodos da classe Retornos]()  
+
+![Métodos da classe Retornos](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/Metodos/MetodosRetornoS.png)  
 
 #### CamposAlteracao  
 
@@ -199,8 +200,6 @@ A classe possui 5 parametros, sendo eles:
 - String valorParaAlterarCampo;  
 
 E a classe CamposAlteracao possui 3 construtores, o primeiro recebe nomeClausulaWhere, tabela, id e campo, o segundo recebe tabela, id, campo e valorParaAlterarCampo e o ultimo recebe tabela, campo e id.  
-
-![Construtores da classe CamposAlteracao]()  
 
 ##### Métodos  
 
@@ -225,15 +224,15 @@ A classe possui 7 métodos, sendo eles:
 - removeItem tabela -> recebe uma declaracao de conexao e um CamposAlteracao e retorna um retorno  
 - alteraItemTabela -> recebe uma declaracao de conexao e um CamposAlteracao e retorna um retorno  
 
-![buscaCliente funcao]()  
+![buscaCliente funcao](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/FuncoesParaClasses/buscaClienteFuncoesParaClasses.png)  
 
-![buscaValorProduto funcao]()  
+![buscaValorProduto funcao](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/FuncoesParaClasses/buscaValorProdutoFuncoesParaClasses.png)  
 
-![buscaProduto funcao]()  
+![buscaProduto funcao](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/FuncoesParaClasses/buscaProdutoFuncoesParaClasses.png)  
 
-![listaEremoveItens funcao]()  
+![listaEremoveItens funcao](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/FuncoesParaClasses/listaEremoveItemTabelaFuncoesParaClasses.png)  
 
-![alteraItemTabela funcao]()  
+![alteraItemTabela funcao](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/FuncoesParaClasses/alterarItemTabelaFuncoesParaClasses.png)  
 
 #### FuncoesModuloCliente  
 
@@ -244,13 +243,13 @@ A classe possui 4 métodos, sendo eles:
 - listaClientes -> recebe uma declaracao de conexao, chama a funcao listaItensTabela das FuncoesParaClasses e retorna um ArrayList
 - buscaCliente -> recebe uma declaracao de conexao, e chama a funcao buscaCliente das FuncoesParaClasses  
 
-![cadastrarCliente funcao]()  
+![cadastrarCliente funcao](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/FuncoesModuloCliente/cadastrarClienteFuncoesModuloCliente.png)  
 
-![alterarCliente funcao]()  
+![alterarCliente funcao](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/FuncoesModuloCliente/alterarClienteFuncoesModuloCliente.png)  
 
-![listarClientes funcao]()  
+![listarClientes funcao](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/FuncoesModuloCliente/listaClientesFuncoesModuloCliente.png)  
 
-![buscarCliente funcao]()  
+![buscarCliente funcao](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/FuncoesModuloCliente/buscaClienteFuncoesModuloCliente.png)  
 
 #### FuncoesModuloProduto 
 
@@ -261,13 +260,13 @@ A classe possui 4 métodos, sendo eles:
 - listaProduto -> recebe uma declaracao de conexao, chama a funcao listaItensTabela das FuncoesParaClasses e retorna um ArrayList
 - buscaProduto -> recebe uma declaracao de conexao, e chama a funcao buscaProduto das FuncoesParaClasses  
 
-![cadastrarProduto funcao]()  
+![cadastrarProduto funcao](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/FuncoesModuloProduto/cadastrarProdutoFuncoesModuloProduto.png)  
 
-![alterarProduto funcao]()  
+![alterarProduto funcao](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/FuncoesModuloProduto/alteraProdutoFuncoesModuloProduto.png)  
 
-![listarProduto funcao]()  
+![listarProduto funcao](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/FuncoesModuloProduto/listaProdutoFuncoesModuloProduto.png)  
 
-![buscarProduto funcao]()  
+![buscarProduto funcao](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/FuncoesModuloProduto/buscaProdutoFuncoesModuloProduto.png)  
 
 #### FuncoesModuloCompra  
 
@@ -275,6 +274,6 @@ A classe possui apenas 1 método, sendo ele:
 
 - listaComprasCliente -> recebe uma declaração de conexão e retorna um ArrayList  
 
-![listaComprasCliente funcao]()  
+![listaComprasCliente funcao](https://github.com/pauloszuparits/Imagens/blob/2f8fd03875bed4f5d72906e47b8f4aa4cb2ca134/DocTecnicaGerenciadorSupermercado/listaComprasClienteFuncoesModuloCompra.png)  
 
 
